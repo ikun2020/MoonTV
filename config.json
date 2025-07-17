@@ -49,20 +49,16 @@
       "api": "https://dbzy.tv/api.php/provide/vod",
       "name": "豆瓣资源"
     },
-    "baiduyun": {
-      "api": "https://api.apibdzy.com/api.php/provide/vod",
-      "name": "度云资源"
-    },
     "suoni": {
-      "api": "https://suonizy.net/api.php/provide/vod",
+      "api": "https://suoniapi.com/api.php/provide/vod",
       "name": "索尼资源"
     },
-    "youzhi": {
-      "api": "https://1080zyk6.com/api.php/provide/vod",
-      "name": "优质资源"
+    "maotai": {
+      "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
+      "name": "茅台资源"
     },
     "mozhua": {
-      "api": "https://Lzizy8.com/api.php/provide/vod",
+      "api": "https://lziplayer.com/api.php/provide/vod",
       "name": "量子资源"
     },
     "mdzy": {

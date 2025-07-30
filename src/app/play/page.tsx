@@ -1296,7 +1296,7 @@ function PlayPageClient() {
             },
           },
           {
-            html: '当前时间设置为片头',
+            html: '设置片头',
             icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="12" r="2" fill="#ffffff"/><path d="M9 12L17 12" stroke="#ffffff" stroke-width="2"/><path d="M17 6L17 18" stroke="#ffffff" stroke-width="2"/></svg>',
             tooltip:
               skipConfig.intro_time === 0
@@ -1315,7 +1315,7 @@ function PlayPageClient() {
             },
           },
           {
-            html: '当前时间设置为片尾',
+            html: '设置片尾',
             icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 6L7 18" stroke="#ffffff" stroke-width="2"/><path d="M7 12L15 12" stroke="#ffffff" stroke-width="2"/><circle cx="19" cy="12" r="2" fill="#ffffff"/></svg>',
             tooltip:
               skipConfig.outro_time >= 0

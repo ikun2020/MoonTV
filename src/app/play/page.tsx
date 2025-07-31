@@ -1257,32 +1257,7 @@ function PlayPageClient() {
             '<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBkPSJNMjUuMjUxIDYuNDYxYy0xMC4zMTggMC0xOC42ODMgOC4zNjUtMTguNjgzIDE4LjY4M2g0LjA2OGMwLTguMDcgNi41NDUtMTQuNjE1IDE0LjYxNS0xNC42MTVWNi40NjF6IiBmaWxsPSIjMDA5Njg4Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIGF0dHJpYnV0ZVR5cGU9IlhNTCIgZHVyPSIxcyIgZnJvbT0iMCAyNSAyNSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHRvPSIzNjAgMjUgMjUiIHR5cGU9InJvdGF0ZSIvPjwvcGF0aD48L3N2Zz4=">',
         },
         settings: [
-          {
-            html: '去广告',
-            icon: '<text x="50%" y="50%" font-size="20" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="#ffffff">AD</text>',
-            tooltip: blockAdEnabled ? '已开启' : '已关闭',
-            onClick() {
-              const newVal = !blockAdEnabled;
-              try {
-                localStorage.setItem('enable_blockad', String(newVal));
-                if (artPlayerRef.current) {
-                  resumeTimeRef.current = artPlayerRef.current.currentTime;
-                  if (
-                    artPlayerRef.current.video &&
-                    artPlayerRef.current.video.hls
-                  ) {
-                    artPlayerRef.current.video.hls.destroy();
-                  }
-                  artPlayerRef.current.destroy();
-                  artPlayerRef.current = null;
-                }
-                setBlockAdEnabled(newVal);
-              } catch (_) {
-                // ignore
-              }
-              return newVal ? '当前开启' : '当前关闭';
-            },
-          },
+          
           {
             html: '跳过片头片尾',
             switch: skipConfig.enable,
@@ -1335,6 +1310,32 @@ function PlayPageClient() {
                 handleSkipConfigChange(newConfig);
                 return `-${formatTime(-outroTime)}`;
               }
+            },
+          },
+          {
+            html: '去广告',
+            icon: '<text x="50%" y="50%" font-size="20" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="#ffffff">AD</text>',
+            tooltip: blockAdEnabled ? '已开启' : '已关闭',
+            onClick() {
+              const newVal = !blockAdEnabled;
+              try {
+                localStorage.setItem('enable_blockad', String(newVal));
+                if (artPlayerRef.current) {
+                  resumeTimeRef.current = artPlayerRef.current.currentTime;
+                  if (
+                    artPlayerRef.current.video &&
+                    artPlayerRef.current.video.hls
+                  ) {
+                    artPlayerRef.current.video.hls.destroy();
+                  }
+                  artPlayerRef.current.destroy();
+                  artPlayerRef.current = null;
+                }
+                setBlockAdEnabled(newVal);
+              } catch (_) {
+                // ignore
+              }
+              return newVal ? '当前开启' : '当前关闭';
             },
           },
         ],
